@@ -246,8 +246,6 @@
 
 
     <div class="cardsContainer">
-
-        
         <?php
 
             foreach($comics as $comic) {
@@ -264,6 +262,75 @@
     </div>
 
 
+
+    <div class="load">
+        <a href="/">
+            LOAD MORE
+        </a>
+    </div>
+
+
+
+
+
+    <?php 
+
+        $links = [
+
+            [
+                "text" => "DIGITAL COMICS",
+                "source" => "{{ Vite::asset('/resources/img/dc-logo.png') }}",
+            ],
+            [
+                "text" => "DC MERCHANDISE",
+                "source" => "/buy-comics-merchandise.png",
+            ],
+            [
+                "text" => "SUBSCRIPTION",
+                "source" => "/buy-comics-subscriptions.png",
+            ],
+            [
+                "text" => "COMIC SHOP LOCATOR",
+                "source" => "/buy-comics-shop-locator.png",
+            ],
+
+        ];
+
+    ?>
+
+
+    <div class="merchandise">
+        <?php
+
+            foreach($links as $link) {
+                $source = $link["source"];
+                $text = $link["text"];
+            
+                echo "<a href='/'>"
+                        . "<img src=" . $source . "' class='scale' alt=''>" 
+                        . "<span href='#''>" . $text . "</span>"
+                    . "</a>";
+            }
+
+            echo 
+                "<a href='/'"
+                    . "<img class='differentScale' src='../resources/img/buy-dc-power-visa.svg' alt=''>" 
+                    . "<span href='#''>DC POWER VISA</span>"
+                . "</a>";
+/* resources/img/buy-dc-power-visa.svg */
+        ?>
+    </div>
+{{--     <img src="resources/" alt="">
+<div class="merchandise">
+    <a href="/" v-for="(link, index) in links" :key="index">
+        <img :src="link.source" alt="" class="scale">
+        <span href="#">{{ link.text }}</span>
+    </a>
+    <a href="/">
+        <img class="differentScale" src="../assets/buy-dc-power-visa.svg" alt="">
+        <span href="#">DC POWER VISA</span>
+    </a>
+</div> --}}
 
 
 
