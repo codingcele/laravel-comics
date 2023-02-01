@@ -279,7 +279,7 @@
 
             [
                 "text" => "DIGITAL COMICS",
-                "source" => "{{ Vite::asset('/resources/img/dc-logo.png') }}",
+                "source" => "asset('/resources/img/dc-logo.png')",
             ],
             [
                 "text" => "DC MERCHANDISE",
@@ -307,7 +307,7 @@
                 $text = $link["text"];
             
                 echo "<a href='/'>"
-                        . "<img src=" . $source . "' class='scale' alt=''>" 
+                        . "<img src='{{" . $source . "}}' class='scale' alt=''>" 
                         . "<span href='#''>" . $text . "</span>"
                     . "</a>";
             }
@@ -320,17 +320,218 @@
 /* resources/img/buy-dc-power-visa.svg */
         ?>
     </div>
-{{--     <img src="resources/" alt="">
-<div class="merchandise">
-    <a href="/" v-for="(link, index) in links" :key="index">
-        <img :src="link.source" alt="" class="scale">
-        <span href="#">{{ link.text }}</span>
-    </a>
-    <a href="/">
-        <img class="differentScale" src="../assets/buy-dc-power-visa.svg" alt="">
-        <span href="#">DC POWER VISA</span>
-    </a>
-</div> --}}
+
+
+
+
+
+
+    <?php
+
+       $categories = [
+            [
+                "title"=> "DC COMICS",
+                "links"=> [
+                    [
+                        "text"=> "Characters",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Comics",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Movies",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "TV",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Games",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Videos",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "News",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                ],
+            ],
+            [
+                "title"=> "SHOP",
+                "links"=> [
+                    [
+                        "text"=> "Shop DC",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Shop DC Collectibles",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                ],
+            ],
+            [
+                "title"=> "DC",
+                "links"=> [
+                    [
+                        "text"=> "Terms Of Use",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Privacy policy (New)",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Ad Choices",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Advertising",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Jobs",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Subscriptions",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Talent Workshops",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "CPSC Certificates",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Ratings",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Shop Help",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "Contact Us",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                ],
+            ],
+            [
+                "title"=> "SITES",
+                "links"=> [
+                    [
+                        "text"=> "DC",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "MAD Magazine",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "DC Kids",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "DC Universe",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                    [
+                        "text"=> "DC Power Visa",
+                        "url"=> "#",
+                        "current"=> false,
+                    ],
+                ],
+            ],
+        ]
+
+    ?>
+
+
+
+
+
+
+    <div class="contain">
+
+        <div class="left">
+            
+            <?php
+
+                foreach($categories as $category) {
+                    $title = $category["title"];
+                
+                    echo "<div class='list'>"
+                            . '<div class="titleContainer">'
+                                . '<a class="title">' . $title . "</a>"
+                            . "</div>" ;
+
+                    foreach($category["links"] as $link) {
+                        $text = $link["text"];
+                
+                        echo     
+                            "<div>"
+                                . '<a class="item">' . $text . "</a>"
+                            . "</div>";
+                    }
+
+                    echo "</div>";
+
+                }
+                /* foreach($category["links"] as $link) {
+                    $text = $link["text"];
+                
+                    echo     "<div>"
+                                . '<a class="item">' . $text . "</a>"
+                            . "</div>"
+                        . "</div>";
+                } */
+            ?>
+
+        </div>
+        <div class="right">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 

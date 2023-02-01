@@ -140,14 +140,77 @@ a {
         .differentScale {
             height: 25px;
         }
+
+        span {
+            margin-left: 10px;
+        }
     }
 }
 
 
 
-span {
-    margin-left: 10px;
+
+
+
+
+
+
+.contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 43vh;
+    background-image: url("/resources/img/footer-bg.jpg");
+    padding: 0px 200px 0px 200px;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        width: calc(100% - 45vh - 400px);
+        flex-wrap: wrap;
+
+        .list {
+            margin-right: 30px;
+            margin-bottom: 15px;
+
+            .titleContainer {
+                margin-top: 5px;
+                margin-bottom: 5px;
+
+                .title {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: white;
+                }
+            }
+
+
+            .item {
+                font-size: 10px;
+                color: gray;
+                margin-bottom: 2px;
+            }
+        }
+
+    }
+
+    .right {
+        height: 100%;
+        width: 65vh;
+        background-image: url("/resources/img/dc-logo-bg.png");
+        background-size: 65vh;
+        background-position: center;
+    }
 }
+
+
+
+
+
+
+
+
 
 
 
