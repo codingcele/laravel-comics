@@ -1,32 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    <div class="container-fluid d-flex justify-content-space-between align-items-center my_header">
-        <div class="col-3 d-flex justify-content-center h-75">
-            <img class="pointer" src="{{ Vite::asset("resources/img/dc-logo.png") }}" alt="">
-        </div>
-        <div class="col-6 d-flex justify-content-around">
-            <div class="my_fs_10px pointer">CHARACTERS</div>
-            <div class="my_fs_10px pointer">COMICS</div>
-            <div class="my_fs_10px pointer">MOVIES</div>
-            <div class="my_fs_10px pointer">TV</div>
-            <div class="my_fs_10px pointer">GAMES</div>
-            <div class="my_fs_10px pointer">COLLECTIBLES</div>
-            <div class="my_fs_10px pointer">VIDEOS</div>
-            <div class="my_fs_10px pointer">FANS</div>
-            <div class="my_fs_10px pointer">NEWS</div>
-            <div class="my_fs_10px pointer">SHOP</div>
-        </div>
-        <div class="col-3 my_fs_13px my_search pointer">
-            <div class="d-flex justify-content-end">Search <i class="fa-solid fa-magnifying-glass d-flex align-items-center magni"></i></div>
-            <div class="blueLine"></div>
-        </div>
-    </div>
-    <div class = "container-fluid my_jumbotron">
-        <div class="col-3 currentSeries">CURRENT SERIES</div>
-    </div>
-
-
+    
     <?php
         $comics = [
             [
@@ -252,7 +227,7 @@
                 $title = $comic["series"];
                 $img = $comic["thumb"];
             
-                echo "<a href='/' class='card'>"
+                echo "<a href='singleComic' class='card'>"
                         . "<img src='" . $img . "' alt=''>" 
                         . "<div class='title'>" . $title . "</div>" 
                     . "</a>";
@@ -279,19 +254,19 @@
 
             [
                 "text" => "DIGITAL COMICS",
-                "source" => "asset('/resources/img/dc-logo.png')",
+                "source" => Vite::asset("resources/img/buy-comics-digital-comics.png"),
             ],
             [
                 "text" => "DC MERCHANDISE",
-                "source" => "/buy-comics-merchandise.png",
+                "source" => Vite::asset("resources/img/buy-comics-merchandise.png"),
             ],
             [
                 "text" => "SUBSCRIPTION",
-                "source" => "/buy-comics-subscriptions.png",
+                "source" => Vite::asset("resources/img/buy-comics-subscriptions.png"),
             ],
             [
                 "text" => "COMIC SHOP LOCATOR",
-                "source" => "/buy-comics-shop-locator.png",
+                "source" => Vite::asset("resources/img/buy-comics-shop-locator.png"),
             ],
 
         ];
@@ -307,17 +282,18 @@
                 $text = $link["text"];
             
                 echo "<a href='/'>"
-                        . "<img src='{{" . $source . "}}' class='scale' alt=''>" 
+                        . "<img src=" . $source . " class='scale' alt=''>" 
                         . "<span href='#''>" . $text . "</span>"
                     . "</a>";
-            }
+            };
 
-            echo 
-                "<a href='/'"
-                    . "<img class='differentScale' src='../resources/img/buy-dc-power-visa.svg' alt=''>" 
-                    . "<span href='#''>DC POWER VISA</span>"
-                . "</a>";
-/* resources/img/buy-dc-power-visa.svg */
+            $lastLink = Vite::asset("resources/img/buy-dc-power-visa.svg");
+
+            echo "<a href='/'>"
+                        . "<img src=" . $lastLink . " class='differentScale' alt=''>" 
+                        . "<span href='#''>DC POWER VISA</span>"
+                    . "</a>";
+
         ?>
     </div>
 
@@ -524,43 +500,5 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="cont">
-        <a href="#" class="leftFooter">
-            SIGN-UP NOW!
-        </a>
-        <div class="rightFooter">
-            <div>
-                <a href="#">FOLLOW US</a>
-            </div>
-            <a href="">
-                <img class="pointer" src="{{ Vite::asset("resources/img/footer-facebook.png") }}" alt="">
-            </a>
-            <a href="">
-                <img class="pointer" src="{{ Vite::asset("resources/img/footer-twitter.png") }}" alt="">
-            </a>
-            <a href="">
-                <img class="pointer" src="{{ Vite::asset("resources/img/footer-youtube.png") }}" alt="">
-            </a>
-            <a href="">
-                <img class="pointer" src="{{ Vite::asset("resources/img/footer-pinterest.png") }}" alt="">
-            </a>
-            <a href="">
-                <img class="pointer" src="{{ Vite::asset("resources/img/footer-periscope.png") }}" alt="">
-            </a>
-        </div>
-    </div>
 
 @endsection
